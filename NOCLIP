@@ -1,0 +1,25 @@
+local noclip = false
+game:GetService('RunService').RenderStepped:connect(function()
+if noclip then
+owner.Character.Humanoid:ChangeState(11)
+end
+end)
+
+game:GetService('UserInputService').InputBegan:Connect(function(key)
+if key.KeyCode == Enum.KeyCode.E then
+noclip = not noclip
+end
+end)
+
+print('Noclip Loaded!')
+warn('Press E to enable and disable the noclip!')
+print([[
+
+███╗░░██╗░█████╗░░█████╗░██╗░░░░░██╗██████╗░
+████╗░██║██╔══██╗██╔══██╗██║░░░░░██║██╔══██╗
+██╔██╗██║██║░░██║██║░░╚═╝██║░░░░░██║██████╔╝
+██║╚████║██║░░██║██║░░██╗██║░░░░░██║██╔═══╝░
+██║░╚███║╚█████╔╝╚█████╔╝███████╗██║██║░░░░░
+╚═╝░░╚══╝░╚════╝░░╚════╝░╚══════╝╚═╝╚═╝░░░░░
+
+]])
