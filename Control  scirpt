@@ -1,0 +1,61 @@
+local block = Instance.new("Seat", script)
+block.Size = Vector3.new(1.5,1.5,3)
+block.CFrame = owner.Character:FindFirstChildWhichIsA("BasePart").CFrame
+block.Color = Color3.fromHSV(0,0,1)
+block.Material = 'SmoothPlastic'
+block.Locked = true
+
+owner.Character.Parent = nil
+
+local object = Instance.new("ObjectValue", owner.PlayerGui)
+object.Value = block
+object.Name = 'BLOCK'
+
+block:SetNetworkOwner(owner)
+NLS([[
+local Speed = 0
+local rotspeed = 0
+
+local mouse = owner:GetMouse()
+local uis = game:GetService("UserInputService")
+local cam = workspace.CurrentCamera
+local block = owner.PlayerGui.BLOCK.Value
+
+
+uis.InputBegan:Connect(function(input)
+input = input.KeyCode
+if input == Enum.KeyCode.W then
+Speed = 1
+
+elseif input == Enum.KeyCode.A then
+rotspeed = 1
+elseif input == Enum.KeyCode.S then
+Speed = -1
+
+elseif input == Enum.KeyCode.D then
+rotspeed = -1
+elseif input == Enum.KeyCode.Space then
+block.Velocity = block.Velocity + Vector3.new(0,10,0)
+end
+end)
+
+uis.InputEnded:Connect(function(input)
+input = input.KeyCode
+if input == Enum.KeyCode.W then
+Speed = 0
+elseif input == Enum.KeyCode.A then
+rotspeed = 0
+elseif input == Enum.KeyCode.S then
+Speed = 0
+elseif input == Enum.KeyCode.D then
+rotspeed = 0
+end
+end)
+
+game:GetService("RunService").RenderStepped:Connect(function()
+cam.CFrame = block.CFrame * CFrame.new(1,2,6)
+
+block.Velocity = block.CFrame.LookVector * Speed * 30
+block.AssemblyAngularVelocity = Vector3.new(0,rotspeed * 5,0)
+end)
+]], owner.PlayerGui)
