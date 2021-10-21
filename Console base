@@ -1,0 +1,74 @@
+local screen = Instance.new("Part", script)
+local sg = Instance.new("SurfaceGui", screen)
+local tb = Instance.new("TextBox", sg)
+
+screen.Size = Vector3.new(15,10,1)
+screen.CanCollide = true
+screen.Massless = true
+screen.Transparency = 1
+
+local weld = Instance.new("Weld", screen)
+weld.Part1 = screen
+weld.Part0 = owner.Character.HumanoidRootPart
+weld.C0 = CFrame.new(0,4,-5) * CFrame.Angles(0,math.rad(180),0)
+
+tb.Size = UDim2.new(1,0,1,0)
+tb.Position = UDim2.new(0,0,0,0)
+tb.BackgroundColor3 = BrickColor.new("Institutional white").Color
+tb.TextColor = BrickColor.new("Really black")
+tb.Font = 'Code'
+tb.TextSize = 50
+tb.BorderSizePixel = 10
+tb.RichText = true
+tb.TextXAlignment = 'Left'
+tb.TextWrapped = true
+tb.TextYAlignment = 'Top'
+tb.Name = 'Box'
+tb.BackgroundTransparency = 0
+tb.ClearTextOnFocus = false
+tb.TextTransparency = 0
+tb.TextEditable = false
+
+local val = Instance.new("ObjectValue", owner.Character)
+val.Value = sg
+
+local rem = Instance.new("RemoteEvent", val)
+rem.Name = 'REM'
+
+rem.OnServerEvent:Connect(function(plr, text)
+tb.Text = text
+end)
+
+NLS([[
+
+local sg = script.Parent.Value
+nsg = sg:Clone()
+
+local screen = sg.Parent
+
+sg:Destroy()
+sg = nsg
+sg.Parent = script
+script.Parent.Parent = owner.PlayerGui
+
+sg.Adornee = screen
+
+screen.CanCollide = false
+
+local tb = sg.Box
+local rem = script.Parent.REM
+
+tb.TextEditable = true
+
+tb.Changed:Connect(function()
+rem:FireServer(tb.Text)
+end)
+
+]], val)
+
+
+owner.Chatted:Connect(function(msg)
+if string.lower(msg) == '-exe' then
+loadstring(tb.Text)(1)
+end
+end)
