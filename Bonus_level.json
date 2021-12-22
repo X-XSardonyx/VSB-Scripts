@@ -1,0 +1,222 @@
+{
+  "header": {
+    "PPQ": 192,
+    "bpm": 120,
+    "timeSignature": [
+      4,
+      4
+    ],
+    "name": "M2bonus"
+  },
+  "tempo": [
+    {
+      "absoluteTime": 0,
+      "seconds": 0,
+      "bpm": 120
+    }
+  ],
+  "timeSignature": [
+    {
+      "absoluteTime": 0,
+      "seconds": 0,
+      "numerator": 4,
+      "denominator": 2,
+      "click": 24,
+      "notesQ": 8
+    }
+  ],
+  "startTime": 0,
+  "duration": 1.1666666666666667,
+  "tracks": [
+    {
+      "startTime": 0,
+      "duration": 0,
+      "length": 0,
+      "notes": [],
+      "controlChanges": {},
+      "id": 0
+    },
+    {
+      "startTime": 0,
+      "duration": 0,
+      "length": 0,
+      "notes": [],
+      "controlChanges": {},
+      "id": 1,
+      "name": "M2bonus"
+    },
+    {
+      "startTime": 0,
+      "duration": 1.1666666666666667,
+      "length": 6,
+      "notes": [
+        {
+          "name": "G4",
+          "midi": 67,
+          "time": 0,
+          "velocity": 0.8661417322834646,
+          "duration": 0.11979166666666667
+        },
+        {
+          "name": "A4",
+          "midi": 69,
+          "time": 0.125,
+          "velocity": 0.8661417322834646,
+          "duration": 0.11979166666666669
+        },
+        {
+          "name": "A#4",
+          "midi": 70,
+          "time": 0.25,
+          "velocity": 0.8661417322834646,
+          "duration": 0.11979166666666669
+        },
+        {
+          "name": "B4",
+          "midi": 71,
+          "time": 0.375,
+          "velocity": 0.8661417322834646,
+          "duration": 0.11979166666666669
+        },
+        {
+          "name": "E5",
+          "midi": 76,
+          "time": 0.625,
+          "velocity": 0.8661417322834646,
+          "duration": 0.11979166666666663
+        },
+        {
+          "name": "D5",
+          "midi": 74,
+          "time": 0.75,
+          "velocity": 0.8661417322834646,
+          "duration": 0.41666666666666674
+        }
+      ],
+      "controlChanges": {
+        "7": [
+          {
+            "number": 7,
+            "time": 0,
+            "value": 1
+          }
+        ],
+        "10": [
+          {
+            "number": 10,
+            "time": 0,
+            "value": 0.5039370078740157
+          }
+        ]
+      },
+      "id": 2,
+      "name": "Super Mario Bros. 2 - Get Mushroom",
+      "instrumentNumber": 56,
+      "instrument": "trumpet",
+      "instrumentFamily": "brass",
+      "channelNumber": 0,
+      "isPercussion": false
+    },
+    {
+      "startTime": 0,
+      "duration": 1.1666666666666667,
+      "length": 6,
+      "notes": [
+        {
+          "name": "B4",
+          "midi": 71,
+          "time": 0,
+          "velocity": 0.8661417322834646,
+          "duration": 0.11979166666666667
+        },
+        {
+          "name": "C5",
+          "midi": 72,
+          "time": 0.125,
+          "velocity": 0.8661417322834646,
+          "duration": 0.11979166666666669
+        },
+        {
+          "name": "C#5",
+          "midi": 73,
+          "time": 0.25,
+          "velocity": 0.8661417322834646,
+          "duration": 0.11979166666666669
+        },
+        {
+          "name": "D5",
+          "midi": 74,
+          "time": 0.375,
+          "velocity": 0.8661417322834646,
+          "duration": 0.11979166666666669
+        },
+        {
+          "name": "G5",
+          "midi": 79,
+          "time": 0.625,
+          "velocity": 0.8661417322834646,
+          "duration": 0.11979166666666663
+        },
+        {
+          "name": "F5",
+          "midi": 77,
+          "time": 0.75,
+          "velocity": 0.8661417322834646,
+          "duration": 0.41666666666666674
+        }
+      ],
+      "controlChanges": {
+        "7": [
+          {
+            "number": 7,
+            "time": 0,
+            "value": 1
+          }
+        ],
+        "10": [
+          {
+            "number": 10,
+            "time": 0,
+            "value": 0.5039370078740157
+          }
+        ]
+      },
+      "id": 3,
+      "name": "Secuenced by: FireMario (17/Mar/2002)",
+      "instrumentNumber": 56,
+      "instrument": "trumpet",
+      "instrumentFamily": "brass",
+      "channelNumber": 1,
+      "isPercussion": false
+    },
+    {
+      "startTime": 0,
+      "duration": 0,
+      "length": 0,
+      "notes": [],
+      "controlChanges": {
+        "7": [
+          {
+            "number": 7,
+            "time": 0,
+            "value": 1
+          }
+        ],
+        "10": [
+          {
+            "number": 10,
+            "time": 0,
+            "value": 0.5039370078740157
+          }
+        ]
+      },
+      "id": 4,
+      "name": "Tempo Track",
+      "instrumentNumber": 56,
+      "instrument": "trumpet",
+      "instrumentFamily": "brass",
+      "channelNumber": 0,
+      "isPercussion": false
+    }
+  ]
+}
