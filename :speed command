@@ -1,0 +1,6 @@
+owner.Chatted:Connect(function(msg) msg = string.split(msg, ' ') if msg[1] == ':speed' then       local plr = owner
+for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+if string.find(string.lower(v.Name), msg[2]) then
+plr = v
+end
+end  plr.Character.Humanoid.WalkSpeed = msg[3]  end end)
