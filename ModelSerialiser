@@ -1,0 +1,107 @@
+local object = workspace.MODEL
+
+local start = [[function part(shape,anchored, transparency, size, cframe, color, locked, cancollide,material)
+
+local prt = Instance.new("Part", script)
+prt.Size = size
+prt.Anchored = anchored
+prt.CanCollide = cancollide
+prt.Locked = locked
+prt.Shape = shape
+prt.Transparency = transparency
+prt.Size = size
+prt.Color = color
+prt.CFrame = cframe
+prt.Material = material
+
+end
+
+function wedge(shape,anchored, transparency, size, cframe, color, locked, cancollide, material)
+
+local prt = Instance.new("WedgePart", script)
+prt.Size = size
+prt.Anchored = anchored
+prt.Shape = shape
+prt.CanCollide = cancollide
+prt.Locked = locked
+prt.Transparency = transparency
+prt.Size = size
+prt.Color = color
+prt.CFrame = cframe
+prt.Material = material
+
+end
+
+ ]]
+
+for i,v in pairs(object:GetDescendants()) do
+if v:IsA("Part") then
+start = start..[[
+
+part(]]
+
+start = start..'"'..v.Shape.Name..'",'
+if v.Anchored then 
+start = start..'true'
+else
+start = start..'false'
+end
+
+start = start..','..v.Transparency..',Vector3.new('..v.Size.X..','..v.Size.Y..','..v.Size.Z..'),CFrame.new('..v.Position.X..','..v.Position.Y..','..v.Position.Z..') * CFrame.Angles(math.rad('..v.Orientation.X..'),math.rad('..v.Orientation.Y..'),math.rad('..v.Orientation.Z..'))'..','..'Color3.new('..v.Color.R..','..v.Color.G..','..v.Color.B..')'
+
+if v.Locked then 
+start = start..',true'
+else
+start = start..',false'
+end
+
+if v.CanCollide then 
+start = start..',true,'
+else
+start = start..',false,'
+end
+
+
+start = start..'"'..v.Material.Name..'")'
+
+elseif v:IsA("WedgePart") then
+start = start..[[
+
+wedge(]]
+
+start = start..'"'..v.Shape.Name..'",'
+
+if v.Anchored then 
+start = start..'true'
+else
+start = start..'false'
+end
+
+start = start..','..v.Transparency..',Vector3.new('..v.Size.X..','..v.Size.Y..','..v.Size.Z..'),CFrame.new('..v.Position.X..','..v.Position.Y..','..v.Position.Z..') * CFrame.Angles(math.rad('..v.Orientation.X..'),math.rad('..v.Orientation.Y..'),math.rad('..v.Orientation.Z..'))'..','..'Color3.new('..v.Color.R..','..v.Color.G..','..v.Color.B..')'
+
+if v.Locked then 
+start = start..',true'
+else
+start = start..',false'
+end
+
+if v.CanCollide then 
+start = start..',true,'
+else
+start = start..',false,'
+end
+
+start = start..'"'..v.Material.Name..'")'
+
+end
+end
+
+local gui = Instance.new("ScreenGui", script)
+
+local frame = Instance.new("TextBox", gui)
+frame.Size = UDim2.new(.25,0,.25,0)
+frame.Position = UDim2.new(0,0,.5,0)
+frame.TextEditable = false
+frame.TextScaled = true
+frame.Text = start
+frame.ClearTextOnFocus = false
