@@ -1,0 +1,31 @@
+for i,v in pairs(owner.Character:GetDescendants()) do
+if v:IsA("Motor6D") then
+local weld = Instance.new("Weld", v.Parent)
+weld.Part1 = v.Part1
+weld.Part0 = v.Part0
+weld.C0 = v.C0
+weld.C1 = v.C1
+weld.Name = v.Name
+v:Destroy()
+end
+end
+
+--Anim Defaults
+AnimDefaults = {
+Head = owner.Character.Torso.Neck.C0,
+Torso = owner.Character.HumanoidRootPart.RootJoint.C0,
+Larm = owner.Character.Torso["Left Shoulder"].C0,
+Rarm = owner.Character.Torso["Right Shoulder"].C0,
+Lleg = owner.Character.Torso["Left Hip"].C0,
+Rleg = owner.Character.Torso["Right Hip"].C0
+}
+--Setting Joints
+Head = owner.Character.Torso.Neck
+Torso = owner.Character.HumanoidRootPart.RootJoint
+Larm = owner.Character.Torso["Left Shoulder"]
+Rarm = owner.Character.Torso["Right Shoulder"]
+Lleg = owner.Character.Torso["Left Hip"]
+Rleg = owner.Character.Torso["Right Hip"]
+
+Larm.C0 = AnimDefaults.Larm * CFrame.Angles(0,0,math.rad(-90))
+Rarm.C0 = AnimDefaults.Rarm * CFrame.Angles(0,0,math.rad(90))
