@@ -112,7 +112,7 @@ part("Block",true,0,Vector3.new(0.10000038146973,4.0999999046326,3.5999999046326
 part("Block",true,0,Vector3.new(0.10000038146973,12.39999961853,5),CFrame.new(-19.950000762939,11.200000762939,-45.5) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.58823531866074,0.33333334326744,0.33333334326744),false,true,"DiamondPlate","Part",Model)
 part("Cylinder",true,0,Vector3.new(1.2999999523163,5.7999997138977,5.7999997138977),CFrame.new(-19.049999237061,3.7999997138977,-13.700002670288) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"Plastic","Part",Model)
 
-Model:MoveTo(offset * CFrame.new(0,4,0).Position)
+Model:MoveTo(offset.Position)
 
 smallroad = model.PLAN
 smallroad2 = model.PLAN2
