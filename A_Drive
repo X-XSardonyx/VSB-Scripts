@@ -153,4 +153,3 @@ grass.Material = 'Grass'
 grass.BrickColor = BrickColor.new("Camo")
 grass.CFrame = offset
 grass.Locked = true
-
