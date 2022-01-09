@@ -17,6 +17,9 @@ prt.Color = color
 prt.CFrame = cframe
 prt.Material = material
 prt.Name = name
+ddd
+return prt
+
 end
 
 part("Cylinder",true,0,Vector3.new(1,18,18),CFrame.new(0,0.5,-30) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(-90)),Color3.new(0.97254902124405,0.97254902124405,0.97254902124405),false,true,"Cobblestone","Part", model)
@@ -106,13 +109,17 @@ part("Block",true,0,Vector3.new(0.10000038146973,4.0999999046326,3.5999999046326
 part("Block",true,0,Vector3.new(0.10000038146973,10.699999809265,11.800000190735),CFrame.new(-7.0500011444092,12.100093841553,-13.468963623047) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.58823531866074,0.33333334326744,0.33333334326744),false,true,"DiamondPlate","Part",Model)
 part("Block",true,0,Vector3.new(6.3500003814697,12.499999046326,0.10000000149012),CFrame.new(-17.025001525879,11.250000953674,-5.0500001907349) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.58823531866074,0.33333334326744,0.33333334326744),false,true,"DiamondPlate","Part",Model)
 part("Block",true,0,Vector3.new(12.800000190735,1,3.5999999046326),CFrame.new(-13.5,6.400041103363,-41.441177368164) * CFrame.Angles(math.rad(-30),math.rad(0),math.rad(0)),Color3.new(0.38823530077934,0.37254902720451,0.38431373238564),false,true,"Concrete","Part",Model)
-part("Block",true,0,Vector3.new(12.800000190735,1,16),CFrame.new(-13.5,5.5,-26) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.38823530077934,0.37254902720451,0.38431373238564),false,true,"Concrete","Part",Model)
+local mover = part("Block",true,0,Vector3.new(12.800000190735,1,16),CFrame.new(-13.5,5.5,-26) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.38823530077934,0.37254902720451,0.38431373238564),false,true,"Concrete","Part",Model)
 part("Block",true,0,Vector3.new(12.800000190735,1,3.5999999046326),CFrame.new(-13.5,6.400041103363,-35.49674987793) * CFrame.Angles(math.rad(30),math.rad(0),math.rad(0)),Color3.new(0.38823530077934,0.37254902720451,0.38431373238564),false,true,"Concrete","Part",Model)
 part("Block",true,0,Vector3.new(0.10000038146973,4.0999999046326,3.5999999046326),CFrame.new(-19.950000762939,7.7423524856567,-34.721702575684) * CFrame.Angles(math.rad(30),math.rad(0),math.rad(0)),Color3.new(0.58823531866074,0.33333334326744,0.33333334326744),false,true,"DiamondPlate","Part",Model)
 part("Block",true,0,Vector3.new(0.10000038146973,12.39999961853,5),CFrame.new(-19.950000762939,11.200000762939,-45.5) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.58823531866074,0.33333334326744,0.33333334326744),false,true,"DiamondPlate","Part",Model)
 part("Cylinder",true,0,Vector3.new(1.2999999523163,5.7999997138977,5.7999997138977),CFrame.new(-19.049999237061,3.7999997138977,-13.700002670288) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"Plastic","Part",Model)
 
-Model:MoveTo(offset.Position)
+model.PrimaryPart = mover
+
+mover.BrickColor = BrickColor.new("New Yeller")
+
+model:SetPrimaryPartCFrame(offset * CFrame.new(0,10,0))
 
 smallroad = model.PLAN
 smallroad2 = model.PLAN2
