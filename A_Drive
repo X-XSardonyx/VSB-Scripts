@@ -1,4 +1,5 @@
 print("'A long trip' - Made by X_XSardonyx.")
+print('V 0.5')
 local offset = CFrame.new(0,7000,-10000)
 
 model = Instance.new("Model", script)
