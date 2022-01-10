@@ -158,13 +158,8 @@ grass.BrickColor = BrickColor.new("Camo")
 grass.CFrame = offset * CFrame.new(0,-9,0)
 grass.Locked = true
 
-grass.Velocity = Vector3.new(0,0,50)
-road.Velocity = Vector3.new(0,0,50)
-
-game:GetService("RunService").Heartbeat:Connect(function()
-road.Size = road.Size + Vector3.new(0,0,.1)
-grass.Size = grass.Size + Vector3.new(0,0,.1)
-end)
+grass.Velocity = Vector3.new(0,0,500)
+road.Velocity = Vector3.new(0,0,500)
 
 road.Touched:Connect(function(hit)
 if hit.Parent:FindFirstChildOfClass("Humanoid") then
@@ -180,8 +175,11 @@ hit:BreakJoints()
 end
 end)
 
-
 while wait(10) do
-road.Size = Vector3.new(100,2,1000)
-grass.Size = Vector3.new(150,1.5,1000)
+road.Size = Vector3.new(100,2,500)
+grass.Size = Vector3.new(150,1.5,500)
+
+game:GetService("TweenService"):Create(road, TweenInfo.new(10), {Size = Vector3.new(100,2,700)}):Play()
+game:GetService("TweenService"):Create(grass, TweenInfo.new(10), {Size = Vector3.new(150,1.5,700)}):Play()
+
 end
