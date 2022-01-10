@@ -158,5 +158,18 @@ grass.BrickColor = BrickColor.new("Camo")
 grass.CFrame = offset * CFrame.new(0,-9,0)
 grass.Locked = true
 
-grass.Velocity = Vector3.new(0,0,100)
-road.Velocity = Vector3.new(0,0,100)
+grass.Velocity = Vector3.new(0,0,20)
+road.Velocity = Vector3.new(0,0,20)
+
+
+game:GetService("RunService").Heartbeat:Connect(function()
+road.Size = Vector3.new(100,2,1000 + .001)
+grass.Size = Vector3.new(100,1.5,1000 + .001)
+end)
+
+road.Touched:Connect(function(hit)
+hit.Parent:BreakJoints()
+end)
+grass.Touched:Connect(function(hit)
+hit.Parent:BreakJoints()
+end)
