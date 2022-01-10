@@ -143,7 +143,7 @@ end)
 
 local road = Instance.new("Part", script)
 road.Anchored = true
-road.Size = Vector3.new(100,2,500)
+road.Size = Vector3.new(100,2,1500)
 road.Material = 'Concrete'
 road.BrickColor = BrickColor.new("Black")
 road.CFrame = offset
@@ -152,11 +152,29 @@ road.Locked = true
 
 local grass = Instance.new("Part", script)
 grass.Anchored = true
-grass.Size = Vector3.new(150,1.5,500)
+grass.Size = Vector3.new(150,1.5,1500)
 grass.Material = 'Grass'
 grass.BrickColor = BrickColor.new("Camo")
 grass.CFrame = offset * CFrame.new(0,-9,0)
 grass.Locked = true
+
+local wall = Instance.new("Part", script)
+wall.Anchored = true
+wall.Size = Vector3.new(1,100,1500)
+wall.Material = 'Grass'
+wall.BrickColor = BrickColor.new("Camo")
+wall.CFrame = offset * CFrame.new(75,50,0)
+wall.Locked = true
+
+local wall = Instance.new("Part", script)
+wall.Anchored = true
+wall.Size = Vector3.new(1,100,1500)
+wall.Material = 'Grass'
+wall.BrickColor = BrickColor.new("Camo")
+wall.CFrame = offset * CFrame.new(-75,50,0)
+wall.Locked = true
+
+
 
 grass.Velocity = Vector3.new(0,0,500)
 road.Velocity = Vector3.new(0,0,500)
@@ -176,10 +194,9 @@ end
 end)
 
 while wait(10) do
-road.Size = Vector3.new(100,2,500)
-grass.Size = Vector3.new(150,1.5,500)
+road.Size = Vector3.new(100,2,1500)
+grass.Size = Vector3.new(150,1.5,1500)
 
-game:GetService("TweenService"):Create(road, TweenInfo.new(10), {Size = Vector3.new(100,2,700)}):Play()
-game:GetService("TweenService"):Create(grass, TweenInfo.new(10), {Size = Vector3.new(150,1.5,700)}):Play()
-
+game:GetService("TweenService"):Create(road, TweenInfo.new(10), {Size = Vector3.new(100,2,1700)}):Play()
+game:GetService("TweenService"):Create(grass, TweenInfo.new(10), {Size = Vector3.new(150,1.5,1700)}):Play()
 end
