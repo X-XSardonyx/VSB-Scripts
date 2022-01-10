@@ -41,7 +41,7 @@ end
 local boom = Instance.new("Part", Model)
 boom.Size = Vector3.new(3,2,1.5)
 boom.Material = 'SmoothPlastic'
-boom.CFrame = CFrame.new(-5,8,-3) * CFrame.Angles(0,math.rad(45),0)
+boom.CFrame = CFrame.new(0,8,0) * CFrame.Angles(0,math.rad(45),0)
 boom.Anchored = true
 boom.Color = Color3.fromHSV(1,0,1)
 
