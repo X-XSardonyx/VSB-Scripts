@@ -161,7 +161,7 @@ wall.Anchored = true
 wall.Size = Vector3.new(1,100,500)
 wall.Material = 'Grass'
 wall.BrickColor = BrickColor.new("Camo")
-wall.CFrame = offset * CFrame.new(75,50,0)
+wall.CFrame = offset * CFrame.new(75,41,0)
 wall.Locked = true
 
 local wall2 = Instance.new("Part", script)
@@ -169,7 +169,7 @@ wall2.Anchored = true
 wall2.Size = Vector3.new(1,100,500)
 wall2.Material = 'Grass'
 wall2.BrickColor = BrickColor.new("Camo")
-wall2.CFrame = offset * CFrame.new(-75,50,0)
+wall2.CFrame = offset * CFrame.new(-75,41,0)
 wall2.Locked = true
 
 grass.Velocity = Vector3.new(0,0,500)
