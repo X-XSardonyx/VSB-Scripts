@@ -136,7 +136,6 @@ if game:GetService("Players"):GetPlayerFromCharacter(part.Parent) then
 plr = game:GetService("Players"):GetPlayerFromCharacter(part.Parent)
 
 plr.Character:SetPrimaryPartCFrame(offset*CFrame.new(0,5,0))
-
 end
 end
 end)
@@ -146,7 +145,6 @@ road.Anchored = true
 road.Size = Vector3.new(100,2,1500)
 road.Material = 'Concrete'
 road.BrickColor = BrickColor.new("Black")
-road.CFrame = offset
 road.CFrame = offset * CFrame.new(0,-9,0)
 road.Locked = true
 
@@ -166,15 +164,13 @@ wall.BrickColor = BrickColor.new("Camo")
 wall.CFrame = offset * CFrame.new(75,50,0)
 wall.Locked = true
 
-local wall = Instance.new("Part", script)
-wall.Anchored = true
-wall.Size = Vector3.new(1,100,1500)
-wall.Material = 'Grass'
-wall.BrickColor = BrickColor.new("Camo")
-wall.CFrame = offset * CFrame.new(-75,50,0)
-wall.Locked = true
-
-
+local wall2 = Instance.new("Part", script)
+wall2.Anchored = true
+wall2.Size = Vector3.new(1,100,1500)
+wall2.Material = 'Grass'
+wall2.BrickColor = BrickColor.new("Camo")
+wall2.CFrame = offset * CFrame.new(-75,50,0)
+wall2.Locked = true
 
 grass.Velocity = Vector3.new(0,0,500)
 road.Velocity = Vector3.new(0,0,500)
