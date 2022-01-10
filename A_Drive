@@ -22,9 +22,9 @@ return prt
 
 end
 
-function seat(anchored, transparency, size, cframe, color, locked, cancollide, material, name)
+function seat(anchored, transparency, size, cframe, color, locked, cancollide, material, name, parent)
 
-local prt = Instance.new("Seat", model)
+local prt = Instance.new("Seat", parent)
 prt.Size = size
 prt.Anchored = anchored
 prt.CanCollide = cancollide
@@ -35,7 +35,6 @@ prt.Color = color
 prt.CFrame = cframe
 prt.Material = material
 prt.Name = name
-return prt
 end
 
 part("Cylinder",true,0,Vector3.new(1,18,18),CFrame.new(0,0.5,-30) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(-90)),Color3.new(0.97254902124405,0.97254902124405,0.97254902124405),false,true,"Cobblestone","Part", model)
@@ -130,7 +129,14 @@ part("Block",true,0,Vector3.new(0.10000038146973,4.0999999046326,3.5999999046326
 part("Block",true,0,Vector3.new(0.10000038146973,12.39999961853,5),CFrame.new(-19.950000762939,11.200000762939,-45.5) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.58823531866074,0.33333334326744,0.33333334326744),false,true,"DiamondPlate","Part",Model)
 part("Cylinder",true,0,Vector3.new(1.2999999523163,5.7999997138977,5.7999997138977),CFrame.new(-19.049999237061,3.7999997138977,-13.700002670288) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"Plastic","Part",Model)
 part("Block",true,0,Vector3.new(12.800000190735,1,16),CFrame.new(-13.5,5.5,-26) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.38823530077934,0.37254902720451,0.38431373238564),false,true,"Concrete","Part",Model)
-
+part("Block",true,0,Vector3.new(2,4,1),CFrame.new(-19.299999237061,7.9999995231628,-65.200004577637) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Part", Model)
+seat(true,0,Vector3.new(2,1,2),CFrame.new(-7.5499992370605,6.4999995231628,-62.450004577637) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Seat", Model)
+part("Block",true,0,Vector3.new(2,4,1),CFrame.new(-19.299999237061,7.9999995231628,-60.950004577637) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Part", Model)
+part("Block",true,0,Vector3.new(2,4,1),CFrame.new(-7.5499992370605,7.9999995231628,-65.200004577637) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Part", Model)
+seat(true,0,Vector3.new(2,1,2),CFrame.new(-19.299999237061,6.4999995231628,-62.450004577637) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Seat", Model)
+part("Block",true,0,Vector3.new(2,4,1),CFrame.new(-7.5499992370605,7.9999995231628,-60.950004577637) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Part", Model)
+seat(true,0,Vector3.new(2,1,2),CFrame.new(-7.5499992370605,6.4999995231628,-66.700004577637) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Seat", Model)
+seat(true,0,Vector3.new(2,1,2),CFrame.new(-19.299999237061,6.4999995231628,-66.700004577637) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Seat", Model)
 Model:MoveTo(offset.Position)
 
 smallroad = model.PLAN
