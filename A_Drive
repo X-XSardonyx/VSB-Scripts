@@ -163,13 +163,22 @@ road.Velocity = Vector3.new(0,0,20)
 
 
 game:GetService("RunService").Heartbeat:Connect(function()
-road.Size = Vector3.new(100,2,1000 + .001)
-grass.Size = Vector3.new(100,1.5,1000 + .001)
+road.Size = road.Size + Vector3.new(0,0,.001)
+grass.Size = grass.Size + Vector3.new(0,0,.001)
 end)
 
 road.Touched:Connect(function(hit)
+if hit.Parent:FindFirstChildOfClass("Humanoid") then
+
 hit.Parent:BreakJoints()
+
+end
 end)
+
 grass.Touched:Connect(function(hit)
+if hit.Parent:FindFirstChildOfClass("Humanoid") then
+
 hit.Parent:BreakJoints()
+
+end
 end)
