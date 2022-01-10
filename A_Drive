@@ -169,16 +169,14 @@ end)
 
 road.Touched:Connect(function(hit)
 if hit.Parent:FindFirstChildOfClass("Humanoid") then
-
-hit.Parent:BreakJoints()
-
+hit.Parent:FindFirstChildOfClass("Humanoid").PlatformStand = true
+hit:BreakJoints()
 end
 end)
 
 grass.Touched:Connect(function(hit)
 if hit.Parent:FindFirstChildOfClass("Humanoid") then
-
-hit.Parent:BreakJoints()
-
+hit.Parent:FindFirstChildOfClass("Humanoid").PlatformStand = true
+hit:BreakJoints()
 end
 end)
