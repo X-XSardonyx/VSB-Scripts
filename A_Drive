@@ -38,60 +38,6 @@ prt.Material = material
 prt.Name = name
 end
 
-local boom = Instance.new("Part", Model)
-boom.Size = Vector3.new(3,2,1.5)
-boom.Material = 'SmoothPlastic'
-boom.CFrame = CFrame.new(0,8,0) * CFrame.Angles(0,math.rad(45),0)
-boom.Anchored = true
-boom.Color = Color3.fromHSV(1,0,1)
-
-local bbg = Instance.new("BillboardGui", Model)
-bbg.Adornee = boom
-bbg.StudsOffset = Vector3.new(0,2,0)
-bbg.Size = UDim2.fromScale(3,2)
-
-local tb2 = Instance.new("TextBox", bbg)
-tb2.Size = UDim2.new(1,0,1,0)
-tb2.BackgroundTransparency = 1
-tb2.TextScaled = true
-tb2.Font = 'Code'
-tb2.Text = [[Furret Walk
-
-2975575778]]
-tb2.TextColor = BrickColor.new("New Yeller")
-
-mesh = Instance.new("SpecialMesh", boom)
-mesh.MeshId = 'rbxassetid://5878720291'
-mesh.TextureId = 'rbxassetid://5878725942'
-mesh.MeshType = 'FileMesh'
-
-local songs = {1494950723,6027322477,5939072342,1916035323,7201796207,225497763,601873759,6538555783,252554299,2307031443, 2975575778,5266257144, 251072363}
-
-sound = Instance.new("Sound", boom)
-sound.SoundId = 'rbxassetid://2975575778'
-sound.MaxDistance = 30
-sound.Volume = .5
-sound.Looped = true
-sound:Play()
-
-local click = Instance.new("ClickDetector", boom)
-
-click.MouseClick:Connect(function()
-
-local v = songs[math.random(1,#songs)]
-local id = v
-
-sound.SoundId = 'rbxassetid://'..id
-
-sound:Play()
-
-tb2.Text = game:GetService("MarketplaceService"):GetProductInfo(v).Name..[[
-
-]]..v
-
-end)
-
-
 part("Cylinder",true,0,Vector3.new(1,18,18),CFrame.new(0,0.5,-30) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(-90)),Color3.new(0.97254902124405,0.97254902124405,0.97254902124405),false,true,"Cobblestone","Part", model)
 part("Cylinder",true,0,Vector3.new(0.10000002384186,10,10),CFrame.new(0,2.0499999523163,-30) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(-90)),Color3.new(0.97254902124405,0.97254902124405,0.97254902124405),false,true,"Neon","Pad", model)
 part("Block",true,0,Vector3.new(4,.2,9),CFrame.new(0,9.1000003814697,-30) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),BrickColor.new("Black").Color,false,false,"Concrete","PLAN", model)
@@ -192,6 +138,49 @@ seat(true,0,Vector3.new(2,1,2),CFrame.new(-19.299999237061,6.4999995231628,-62.4
 part("Block",true,0,Vector3.new(2,4,1),CFrame.new(-7.5499992370605,7.9999995231628,-60.950004577637) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Part", Model)
 seat(true,0,Vector3.new(2,1,2),CFrame.new(-7.5499992370605,6.4999995231628,-66.700004577637) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Seat", Model)
 seat(true,0,Vector3.new(2,1,2),CFrame.new(-19.299999237061,6.4999995231628,-66.700004577637) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Seat", Model)
+local screen = part("Block",true,0,Vector3.new(5.0100002288818,0.89999943971634,1.2999985218048),CFrame.new(-13.5,8.6414108276367,-67.977806091309) * CFrame.Angles(math.rad(45),math.rad(0),math.rad(0)),Color3.new(0.63921570777893,0.63529413938522,0.64705884456635),false,true,"Slate","Part", Model)
+part("Block",true,0,Vector3.new(5,2.4999995231628,1.2999985218048),CFrame.new(-13.5,7.25,-67.850006103516) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.63921570777893,0.63529413938522,0.64705884456635),false,true,"Slate","Part", Model)
+part("Block",true,0,Vector3.new(14.39999961853,3.2999994754791,1.2999985218048),CFrame.new(-13.5,7.6500000953674,-68.850006103516) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.63921570777893,0.63529413938522,0.64705884456635),false,true,"Slate","Part", Model)
+
+local bbg = Instance.new("BillboardGui", screen)
+bbg.Adornee = screen
+
+local tb2 = Instance.new("TextBox", bbg)
+tb2.Size = UDim2.new(1,0,1,0)
+tb2.BackgroundTransparency = 1
+tb2.TextScaled = true
+tb2.Font = 'Code'
+tb2.Text = [[Furret Walk
+
+2975575778]]
+tb2.TextColor = BrickColor.new("New Yeller")
+
+local songs = {1494950723,6027322477,5939072342,1916035323,7201796207,225497763,601873759,6538555783,252554299,2307031443, 2975575778,5266257144, 251072363}
+
+sound = Instance.new("Sound", screen)
+sound.SoundId = 'rbxassetid://2975575778'
+sound.MaxDistance = 30
+sound.Volume = .5
+sound.Looped = true
+sound:Play()
+
+local click = Instance.new("ClickDetector", screen)
+
+click.MouseClick:Connect(function()
+
+local v = songs[math.random(1,#songs)]
+local id = v
+
+sound.SoundId = 'rbxassetid://'..id
+
+sound:Play()
+
+tb2.Text = game:GetService("MarketplaceService"):GetProductInfo(v).Name..[[
+
+]]..v
+
+end)
+
 Model:MoveTo(offset.Position)
 
 smallroad = model.PLAN
