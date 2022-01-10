@@ -139,9 +139,27 @@ seat(true,0,Vector3.new(2,1,2),CFrame.new(-19.299999237061,6.4999995231628,-62.4
 part("Block",true,0,Vector3.new(2,4,1),CFrame.new(-7.5499992370605,7.9999995231628,-60.950004577637) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Part", Model)
 seat(true,0,Vector3.new(2,1,2),CFrame.new(-7.5499992370605,6.4999995231628,-66.700004577637) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Seat", Model)
 seat(true,0,Vector3.new(2,1,2),CFrame.new(-19.299999237061,6.4999995231628,-66.700004577637) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Seat", Model)
-local screen = part("Block",true,0,Vector3.new(1.3000,0.89999943971634,5.0100002288818),CFrame.new(-13.5,8.6414108276367,-67.977806091309) * CFrame.Angles(math.rad(0),math.rad(-90),math.rad(math.rad(-45))),Color3.new(0.63921570777893,0.63529413938522,0.64705884456635),false,true,"Slate","Part", Model)
+local screen = part("Block",true,0,Vector3.new(1.3000,0.89999943971634,5.0100002288818),CFrame.new(-13.5,8.6414108276367,-67.977806091309) * CFrame.Angles(math.rad(45),math.rad(-90),math.rad(math.rad(-45))),Color3.new(0.63921570777893,0.63529413938522,0.64705884456635),false,true,"Slate","Part", Model)
 part("Block",true,0,Vector3.new(5,2.4999995231628,1.2999985218048),CFrame.new(-13.5,7.25,-67.850006103516) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.63921570777893,0.63529413938522,0.64705884456635),false,true,"Slate","Part", Model)
 part("Block",true,0,Vector3.new(14.39999961853,3.2999994754791,1.2999985218048),CFrame.new(-13.5,7.6500000953674,-68.850006103516) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.63921570777893,0.63529413938522,0.64705884456635),false,true,"Slate","Part", Model)
+
+part("Block",true,0,Vector3.new(0.10000002384186,5,10),CFrame.new(-19.850002288818,11.400001525879,-25.10000038147) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.066666670143604,0.066666670143604,0.066666670143604),false,true,"Plastic","Part", Model)
+hook = part("Cylinder",true,0,Vector3.new(0.5,2,2),CFrame.new(-13.125,17.050001144409,-25) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(-90)),Color3.new(0.97254902124405,0.97254902124405,0.97254902124405),false,true,"Plastic","HOOK", Model)
+bulb = part("Ball",true,0.5,Vector3.new(1,1,1),CFrame.new(-13.125,14.300001144409,-25) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(1,1,0),false,true,"Neon","BULB", Model)
+part("Block",true,0,Vector3.new(0.15000000596046,4.5,9.5),CFrame.new(-19.850002288818,11.400001525879,-25.10000038147) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.97254902124405,0.97254902124405,0.97254902124405),false,true,"Plastic","Part", Model)
+
+local att1 = Instance.new("Attachment", hook)
+local att2 = Instance.new("Attachment", bulb)
+att2.Position = Vector3.new(0,.5,0)
+
+rope = Instance.new("RopeConstraint", hook)
+rope.Attachment1 = att1
+rope.Attachment0 = att2
+rope.Visible = true
+rope.Length = 2
+rope.Thickness = .15
+
+bulb.Anchored = false
 
 local bbg = Instance.new("SurfaceGui", screen)
 bbg.Adornee = screen
@@ -161,7 +179,7 @@ local songs = {1494950723,6027322477,5939072342,1916035323,7201796207,225497763,
 
 sound = Instance.new("Sound", screen)
 sound.SoundId = 'rbxassetid://2975575778'
-sound.MaxDistance = 30
+sound.MaxDistance = 100
 sound.Volume = .5
 sound.Looped = true
 sound:Play()
