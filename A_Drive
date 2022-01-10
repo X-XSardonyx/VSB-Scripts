@@ -142,8 +142,9 @@ local screen = part("Block",true,0,Vector3.new(5.0100002288818,0.89999943971634,
 part("Block",true,0,Vector3.new(5,2.4999995231628,1.2999985218048),CFrame.new(-13.5,7.25,-67.850006103516) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.63921570777893,0.63529413938522,0.64705884456635),false,true,"Slate","Part", Model)
 part("Block",true,0,Vector3.new(14.39999961853,3.2999994754791,1.2999985218048),CFrame.new(-13.5,7.6500000953674,-68.850006103516) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.63921570777893,0.63529413938522,0.64705884456635),false,true,"Slate","Part", Model)
 
-local bbg = Instance.new("BillboardGui", screen)
+local bbg = Instance.new("SurfaceGui", screen)
 bbg.Adornee = screen
+bbg.Face = 'Top'
 
 local tb2 = Instance.new("TextBox", bbg)
 tb2.Size = UDim2.new(1,0,1,0)
