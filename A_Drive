@@ -22,6 +22,22 @@ return prt
 
 end
 
+function seat(anchored, transparency, size, cframe, color, locked, cancollide, material, name)
+
+local prt = Instance.new("Seat", model)
+prt.Size = size
+prt.Anchored = anchored
+prt.CanCollide = cancollide
+prt.Locked = locked
+prt.Transparency = transparency
+prt.Size = size
+prt.Color = color
+prt.CFrame = cframe
+prt.Material = material
+prt.Name = name
+return prt
+end
+
 part("Cylinder",true,0,Vector3.new(1,18,18),CFrame.new(0,0.5,-30) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(-90)),Color3.new(0.97254902124405,0.97254902124405,0.97254902124405),false,true,"Cobblestone","Part", model)
 part("Cylinder",true,0,Vector3.new(0.10000002384186,10,10),CFrame.new(0,2.0499999523163,-30) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(-90)),Color3.new(0.97254902124405,0.97254902124405,0.97254902124405),false,true,"Neon","Pad", model)
 part("Block",true,0,Vector3.new(4,.2,9),CFrame.new(0,9.1000003814697,-30) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),BrickColor.new("Black").Color,false,false,"Concrete","PLAN", model)
@@ -114,6 +130,11 @@ part("Block",true,0,Vector3.new(0.10000038146973,4.0999999046326,3.5999999046326
 part("Block",true,0,Vector3.new(0.10000038146973,12.39999961853,5),CFrame.new(-19.950000762939,11.200000762939,-45.5) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.58823531866074,0.33333334326744,0.33333334326744),false,true,"DiamondPlate","Part",Model)
 part("Cylinder",true,0,Vector3.new(1.2999999523163,5.7999997138977,5.7999997138977),CFrame.new(-19.049999237061,3.7999997138977,-13.700002670288) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"Plastic","Part",Model)
 part("Block",true,0,Vector3.new(12.800000190735,1,16),CFrame.new(-13.5,5.5,-26) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.38823530077934,0.37254902720451,0.38431373238564),false,true,"Concrete","Part",Model)
+part("Block",true,0,Vector3.new(0.5,0.5,4.5),CFrame.new(2.9499998092651,-2.2,29.25) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Part")
+part("Block",true,0,Vector3.new(3,4,1),CFrame.new(-4.3000001907349,-3.2,-27) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Part")
+seat("Block",true,0,Vector3.new(3,1,3),CFrame.new(-4.3000001907349,-3.2,-29.014648438) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Seat")
+part("Block",true,0,Vector3.new(3,4,1),CFrame.new(4.6999998092651,-3.2,-27.014648438) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Part")
+seat("Block",true,0,Vector3.new(3,1,3),CFrame.new(4.6999998092651,-3.2,-29.014648438) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Seat")
 
 Model:MoveTo(offset.Position)
 
@@ -161,7 +182,7 @@ wall.Anchored = true
 wall.Size = Vector3.new(1,100,500)
 wall.Material = 'Grass'
 wall.BrickColor = BrickColor.new("Camo")
-wall.CFrame = offset * CFrame.new(75,41,0)
+wall.CFrame = offset * CFrame.new(75,0,0)
 wall.Locked = true
 
 local wall2 = Instance.new("Part", script)
@@ -169,7 +190,7 @@ wall2.Anchored = true
 wall2.Size = Vector3.new(1,100,500)
 wall2.Material = 'Grass'
 wall2.BrickColor = BrickColor.new("Camo")
-wall2.CFrame = offset * CFrame.new(-75,41,0)
+wall2.CFrame = offset * CFrame.new(-75,0,0)
 wall2.Locked = true
 
 grass.Velocity = Vector3.new(0,0,500)
