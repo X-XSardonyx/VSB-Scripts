@@ -139,7 +139,7 @@ seat(true,0,Vector3.new(2,1,2),CFrame.new(-19.299999237061,6.4999995231628,-62.4
 part("Block",true,0,Vector3.new(2,4,1),CFrame.new(-7.5499992370605,7.9999995231628,-60.950004577637) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Part", Model)
 seat(true,0,Vector3.new(2,1,2),CFrame.new(-7.5499992370605,6.4999995231628,-66.700004577637) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Seat", Model)
 seat(true,0,Vector3.new(2,1,2),CFrame.new(-19.299999237061,6.4999995231628,-66.700004577637) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Seat", Model)
-local screen = part("Block",true,0,Vector3.new(5.0100002288818,0.89999943971634,1.2999985218048),CFrame.new(-13.5,8.6414108276367,-67.977806091309) * CFrame.Angles(math.rad(45),math.rad(0),math.rad(0)),Color3.new(0.63921570777893,0.63529413938522,0.64705884456635),false,true,"Slate","Part", Model)
+local screen = part("Block",true,0,Vector3.new(1.3000,0.89999943971634,5.0100002288818),CFrame.new(-13.5,8.6414108276367,-67.977806091309) * CFrame.Angles(math.rad(0),math.rad(-90),math.rad(math.rad(-45))),Color3.new(0.63921570777893,0.63529413938522,0.64705884456635),false,true,"Slate","Part", Model)
 part("Block",true,0,Vector3.new(5,2.4999995231628,1.2999985218048),CFrame.new(-13.5,7.25,-67.850006103516) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.63921570777893,0.63529413938522,0.64705884456635),false,true,"Slate","Part", Model)
 part("Block",true,0,Vector3.new(14.39999961853,3.2999994754791,1.2999985218048),CFrame.new(-13.5,7.6500000953674,-68.850006103516) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.63921570777893,0.63529413938522,0.64705884456635),false,true,"Slate","Part", Model)
 
@@ -148,9 +148,8 @@ bbg.Adornee = screen
 bbg.Face = 'Top'
 
 local tb2 = Instance.new("TextBox", bbg)
-tb2.Size = UDim2.new(5,0,.2,0)
+tb2.Size = UDim2.new(1,0,1,0)
 tb2.BackgroundTransparency = 1
-tb2.Rotation = 90
 tb2.TextScaled = true
 tb2.Font = 'Code'
 tb2.Text = [[Furret Walk
