@@ -132,9 +132,9 @@ part("Cylinder",true,0,Vector3.new(1.2999999523163,5.7999997138977,5.79999971389
 part("Block",true,0,Vector3.new(12.800000190735,1,16),CFrame.new(-13.5,5.5,-26) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.38823530077934,0.37254902720451,0.38431373238564),false,true,"Concrete","Part",Model)
 part("Block",true,0,Vector3.new(0.5,0.5,4.5),CFrame.new(2.9499998092651,-2.2,29.25) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Part")
 part("Block",true,0,Vector3.new(3,4,1),CFrame.new(-4.3000001907349,-3.2,-27) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Part")
-seat("Block",true,0,Vector3.new(3,1,3),CFrame.new(-4.3000001907349,-3.2,-29.014648438) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Seat")
+seat(true,0,Vector3.new(3,1,3),CFrame.new(-4.3000001907349,-3.2,-29.014648438) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Seat")
 part("Block",true,0,Vector3.new(3,4,1),CFrame.new(4.6999998092651,-3.2,-27.014648438) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Part")
-seat("Block",true,0,Vector3.new(3,1,3),CFrame.new(4.6999998092651,-3.2,-29.014648438) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Seat")
+seat(true,0,Vector3.new(3,1,3),CFrame.new(4.6999998092651,-3.2,-29.014648438) * CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),Color3.new(0.10588235408068,0.16470588743687,0.20784313976765),false,true,"SmoothPlastic","Seat")
 
 Model:MoveTo(offset.Position)
 
