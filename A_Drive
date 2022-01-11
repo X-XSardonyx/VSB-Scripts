@@ -171,7 +171,7 @@ tb2.BackgroundTransparency = 1
 tb2.TextScaled = true
 tb2.Font = 'Code'
 tb2.Text = [[Furret Walk
-
+0.1,6.1,4.9
 2975575778]]
 tb2.TextColor = BrickColor.new("New Yeller")
 
@@ -265,6 +265,25 @@ road.Touched:Connect(function(hit)
 if hit.Parent:FindFirstChildOfClass("Humanoid") then
 hit.Parent:FindFirstChildOfClass("Humanoid").PlatformStand = true
 hit:BreakJoints()
+
+char = hit.Parent
+
+for i,v in pairs(char:GetDescendants()) do
+if v:IsA("Humanoid") then
+v.RequiresNeck = false
+elseif v:IsA("Motor6D") then
+local att1 = Instance.new("Attachment", v.Part1)
+local att2 = Instance.new("Attachment", v.Part0)
+att1.CFrame = v.C0
+att2.CFrame = v.C0
+rope = Instance.new("BallSocketConstraint", att1)
+rope.Attachment0 = att1
+rope.Attachment1 = att2
+rope.Visible = false
+v:Destroy()
+end
+end
+
 end
 end)
 
