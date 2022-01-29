@@ -1,4 +1,4 @@
-{
+return {
 	Properties = {
 		Looping = true,
 		Priority = Enum.AnimationPriority.Core
