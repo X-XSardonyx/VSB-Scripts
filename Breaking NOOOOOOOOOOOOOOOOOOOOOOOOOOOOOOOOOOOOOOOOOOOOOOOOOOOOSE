@@ -1,0 +1,90 @@
+return {
+	Properties = {
+		Looping = false,
+		Priority = Enum.AnimationPriority.Core
+	},
+	Keyframes = {
+		[0] = {
+			["HumanoidRootPart"] = {
+				["Torso"] = {
+					CFrame = CFrame.Angles(math.rad(-15.011), 0, 0),
+					["Left Leg"] = {
+						CFrame = CFrame.Angles(0, 0, math.rad(15.011)),
+					},
+					["Right Arm"] = {
+						CFrame = CFrame.Angles(0, 0, math.rad(134.989)),
+					},
+					["Head"] = {
+						CFrame = CFrame.Angles(math.rad(-15.011), 0, 0),
+					},
+					["Left Arm"] = {
+						CFrame = CFrame.Angles(0, 0, math.rad(-165.012)),
+					},
+					["Right Leg"] = {
+						CFrame = CFrame.Angles(0, 0, math.rad(-15.011)),
+					},
+				},
+			},
+		},
+		[0.458] = {
+			["HumanoidRootPart"] = {
+				["Torso"] = {
+					CFrame = CFrame.Angles(math.rad(-15.011), 0, 0),
+					["Left Leg"] = {
+						CFrame = CFrame.Angles(0, 0, math.rad(15.011)),
+					},
+					["Right Arm"] = {
+						CFrame = CFrame.Angles(0, 0, math.rad(134.989)),
+					},
+					["Head"] = {
+						CFrame = CFrame.Angles(math.rad(-15.011), 0, 0),
+					},
+					["Left Arm"] = {
+						CFrame = CFrame.Angles(0, 0, math.rad(-165.012)),
+					},
+					["Right Leg"] = {
+						CFrame = CFrame.Angles(0, 0, math.rad(-15.011)),
+					},
+				},
+			},
+		},
+		[0.467] = {
+			["HumanoidRootPart"] = {
+				["Torso"] = {
+					["Left Leg"] = {
+					},
+					["Right Arm"] = {
+						CFrame = CFrame.Angles(0, 0, math.rad(44.977)),
+					},
+					["Head"] = {
+						CFrame = CFrame.Angles(math.rad(44.977), 0, 0),
+					},
+					["Left Arm"] = {
+						CFrame = CFrame.Angles(0, 0, math.rad(-44.977)),
+					},
+					["Right Leg"] = {
+					},
+				},
+			},
+		},
+		[0.733] = {
+			["HumanoidRootPart"] = {
+				["Torso"] = {
+					["Left Leg"] = {
+					},
+					["Right Arm"] = {
+						CFrame = CFrame.Angles(0, 0, math.rad(44.977)),
+					},
+					["Head"] = {
+						CFrame = CFrame.Angles(math.rad(44.977), 0, 0),
+					},
+					["Left Arm"] = {
+						CFrame = CFrame.Angles(0, 0, math.rad(-44.977)),
+					},
+					["Right Leg"] = {
+					},
+				},
+			},
+		},
+	}
+}
