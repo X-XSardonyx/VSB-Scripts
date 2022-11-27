@@ -20,23 +20,23 @@ return jokee.joke
 end
 
 local mouth = Instance.new("ImageLabel", top)
-mouth.Size = UDim2.new(0,100,0,100)
-mouth.Position = UDim2.new(.5,-50,.5,50)
+mouth.Size = UDim2.new(0,300,0,300)
+mouth.Position = UDim2.new(.5,-150,.5,100)
 mouth.BackgroundTransparency = 1
 mouth.Image = "rbxassetid://7232343934"
 
 local eye1 = Instance.new("ImageLabel", top)
-eye1.Size = UDim2.new(0,200,0,200)
+eye1.Size = UDim2.new(0,500,0,400)
 eye1.BackgroundTransparency = 1
 eye1.AnchorPoint = Vector2.new(.5,.5)
-eye1.Position = UDim2.new(.5,150,.25,0)
+eye1.Position = UDim2.new(.5,300,.25,0)
 eye1.Image = "rbxassetid://6430700049"
 
 local eye2 = Instance.new("ImageLabel", top)
-eye2.Size = UDim2.new(0,200,0,200)
+eye2.Size = UDim2.new(0,500,0,400)
 eye2.BackgroundTransparency = 1
 eye2.AnchorPoint = Vector2.new(.5,.5)
-eye2.Position = UDim2.new(.5,-150,.25,0)
+eye2.Position = UDim2.new(.5,-300,.25,0)
 eye2.Image = "rbxassetid://6430700049"
 
 coroutine.wrap(function()
