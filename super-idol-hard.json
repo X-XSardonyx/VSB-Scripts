@@ -1,16 +1,16 @@
 function joke()
 jokee = game:service("HttpService"):JSONDecode(game:service("HttpService"):GetAsync("https://v2.jokeapi.dev/joke/Any?safe-mode"))
 
-if jokee.error then
+
+if jokee.error == true then
 return joke()
 end
 
 if jokee.type then
-if jokee.type ~= "twopart" then
+if jokee.type ~= "single" then
 return joke()
 end
 end
-
 
 end
 
@@ -60,6 +60,8 @@ sound = Instance.new("Sound", bottom)
 sound.SoundId = "rbxassetid://5906794267"
 sound.MaxDistance = 100
 sound.Volume = 2
+
+joke()
 
 while wait(10) do
 Pun = joke()
