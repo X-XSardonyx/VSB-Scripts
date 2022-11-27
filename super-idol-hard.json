@@ -5,11 +5,12 @@ if joke.error then
 return joke()
 end
 
-if joke.type then
+--[[if joke.type then
 if joke.type ~= "twopart" then
 return joke()
 end
 end
+]]
 
 end
 
