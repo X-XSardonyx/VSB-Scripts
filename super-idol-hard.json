@@ -1,5 +1,12 @@
 function joke()
-return game:service("HttpService"):JSONDecode(game:service("HttpService"):GetAsync("https://icanhazdadjoke.com/"))
+jokee = game:service("HttpService"):JSONDecode(game:service("HttpService"):GetAsync("https://v2.jokeapi.dev/joke/Any?safe-mode"))
+
+if jokee.error then
+return joke()
+end
+if not joke.type == "twopart" then
+return joke()
+end
 end
 
 local mouth = Instance.new("ImageLabel", top)
@@ -50,9 +57,15 @@ sound.MaxDistance = 100
 sound.Volume = 2
 
 while wait(10) do
-Pun = joke().joke
-for i=1,string.len(Pun) do
-tb.Text = string.sub(Pun, 0,i)
+Pun = joke()
+for i=1,string.len(Pun.setup) do
+tb.Text = string.sub(Pun.setup,0,i)
+sound:Play()
+wait(.1)
+end
+wait(3)
+for i=1,string.len(Pun.delivery) do
+tb.Text = string.sub(Pun.delivery, 0,i)
 sound:Play()
 wait(.1)
 end
