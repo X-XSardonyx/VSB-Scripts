@@ -4,9 +4,13 @@ jokee = game:service("HttpService"):JSONDecode(game:service("HttpService"):GetAs
 if jokee.error then
 return joke()
 end
-if not joke.type == "twopart" then
+
+if joke.type then
+if joke.type ~= "twopart" then
 return joke()
 end
+end
+
 end
 
 local mouth = Instance.new("ImageLabel", top)
