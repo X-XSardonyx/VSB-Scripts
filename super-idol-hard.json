@@ -5,7 +5,7 @@ local nls = NLS([[
 repeat task.wait() until script.Value
 sp = script.Value.Value
 local bp = Instance.new("BodyPosition", sp)
-local sound = owner.Character.HumanoidRootPart.Sound
+local sound = Workspace.XDS.Bottom.Sound
 
 bp.MaxForce =  Vector3.new(math.huge,math.huge,math.huge)
 bp.P = 15000000
