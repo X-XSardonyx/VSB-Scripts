@@ -1,6 +1,6 @@
 local vol = 1
 local sp = Instance.new("Part", script)
-local sound = Instance.new("Sound", owner.Character.HumanoidRootPart)
+local sound = Instance.new("Sound", bottom)
 local nls = NLS([[
 repeat task.wait() until script.Value
 sp = script.Value.Value
@@ -29,12 +29,12 @@ sound:Play()
 
 for i = 1,20 do
 local frame = Instance.new("Frame", bottom)
-frame.Position = UDim2.new(.5,-math.sin(i)*300,.5,math.cos(i)*300)
-frame.Rotation = i*(360/20)
+frame.Position = UDim2.new(.5,-math.sin(i)*200,.5,math.cos(i)*175)
+frame.Rotation = (360/20)*i
 frame.Size = UDim2.new(0,50,0,100)
 coroutine.wrap(function()
 while wait() do
-frame.Size = UDim2.new(0,50,0,math.sin(math.noise(i,vol))*30+20)
+frame.Size = UDim2.new(0,50,0,math.sin(math.noise(i,vol))*100+20)
 end
 end)()
 end
