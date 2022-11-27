@@ -1,13 +1,16 @@
 function joke()
+task.wait()
 jokee = game:service("HttpService"):JSONDecode(game:service("HttpService"):GetAsync("https://v2.jokeapi.dev/joke/Any?safe-mode"))
 
 
-if jokee.error == true then
+if jokee.error then
+warn("error")
 return joke()
 end
 
 if jokee.type then
 if jokee.type ~= "single" then
+warn(jokee.type)
 return joke()
 end
 end
@@ -69,4 +72,4 @@ tb.Text = string.sub(Pun.joke,0,i)
 sound:Play()
 wait(.1)
 end
-end
+end	
