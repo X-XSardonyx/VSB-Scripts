@@ -61,20 +61,12 @@ sound.SoundId = "rbxassetid://5906794267"
 sound.MaxDistance = 100
 sound.Volume = 2
 
-joke()
 
-while wait(10) do
+while wait(5) do
 Pun = joke()
-for i=1,string.len(Pun.setup) do
-tb.Text = string.sub(Pun.setup,0,i)
+for i=1,string.len(Pun.joke) do
+tb.Text = string.sub(Pun.joke,0,i)
 sound:Play()
 wait(.1)
 end
-wait(3)
-for i=1,string.len(Pun.delivery) do
-tb.Text = string.sub(Pun.delivery, 0,i)
-sound:Play()
-wait(.1)
-end
-
 end
