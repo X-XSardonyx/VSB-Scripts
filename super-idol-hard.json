@@ -54,11 +54,9 @@ end)()
 local tb = Instance.new("TextBox", bottom)
 tb.Size = UDim2.new(1,0,1,0)
 tb.TextScaled = true
-tb.TextWrapped = true
 tb.TextColor = BrickColor.new("Really black")
 tb.BackgroundColor = BrickColor.new("Pastel orange")
 tb.BorderSizePixel = 0
-tb.Position = UDim2.new(.25,0,.25,0)
 tb.TextXAlignment = "Left"
 
 sound = Instance.new("Sound", bottom)
