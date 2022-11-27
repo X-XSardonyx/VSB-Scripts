@@ -1,124 +1,187 @@
-local Instance = {new = function(a,b)
+local phs1 = {
+"Hello.",
+"I am.",
+"S A M", 
+".  ",
+".. ",
+"...",
+":)",
+"hehe",
+"i like you.",
+"want to be friends?..."
 
-	local Parent = nil
-	local prt = Instance.new(a)
-	if typeof(b) == "Instance" then
-		Parent = b
-		prt.Parent = b
-	else
-		for i,v in pairs(b) do
-			if i ~= "Parent" then
-				prt[i] = v
-			else
-				Parent = v
-			end
-		end
-	end
-	prt.Parent = Parent
-	return prt
-end,}
-
-local char = owner.Character
-
-local head = char.Head
-local lArm = char["Left Arm"]
-local rArm = char["Right Arm"]
-
-local bps = {head,lArm,rArm}
-
-function createVelocities(obj)
-	local bodyGyro = Instance.new("BodyGyro",{Parent = obj,Name = "G",P = 150000,D = 1000,MaxTorque = Vector3.new(math.huge,math.huge,math.huge),CFrame = head.CFrame})
-	local bodyPos = Instance.new("BodyPosition",{Parent = obj,Name = "P",P = 150000,D = 1000,MaxForce = Vector3.new(math.huge,math.huge,math.huge),Position = head.Position})
-	obj:SetNetworkOwner(owner)
-end
-local mod = Instance.new("Model",{Name = owner.Name.."'s vr guy!",Parent = script})
-for _,v in next,bps do
-	v.Parent = mod
-	v.CanCollide = true
-	createVelocities(v)
-end
-owner.Character:Remove()
-
-local value = Instance.new("ObjectValue",owner.PlayerGui)
-value.Value = mod
-
-script.Parent = workspace
-
-NLS([[
-local plr = game:GetService'Players'.LocalPlayer
-local mouse = plr:GetMouse()
-local char = script.Parent.Value
-local Cam = workspace.CurrentCamera
-
-local UIS = game:GetService'UserInputService'
-local VrEnabled = UIS.VREnabled
-
-
-local head = char.Head
-local lArm = char["Left Arm"]
-local rArm = char["Right Arm"]
-local BPS = {head,lArm,rArm}
-for _,v in next,BPS do v.CanCollide = false end
-
-function editCF(obj,cf)
-	obj.G.CFrame = cf
-	obj.P.Position = cf.Position
-end
-
-local CurrentCF = {
-Head = head.CFrame,
-LArm = lArm.CFrame,
-RArm = rArm.CFrame,
 }
-workspace.CurrentCamera.CameraSubject = head
 
-function getRotationCF(cf)
-	cf = cf-cf.Position
-	return cf
-end
+local phs2={
+yes = {"oh. yay!","hello, friend :)", "want to play in the sand box?", "oh yay :D", "*shovels sand away making a deep pit :)*", "i like hiding things under ground.", "do you?", "...", "just me? ok hehe", "anyway i have to go now. :(", "bye :)", "i'll see you very soon :)"},
 
-function applyCFrames()
-	editCF(head,CurrentCF.Head)
-	editCF(lArm,CurrentCF.LArm)
-	editCF(rArm,CurrentCF.RArm)
-end
-
-local Directions = {
-Forwards = 0,
-Right = 0,
-Left = 0,
-Backwards = 0,
+no = {"oh... well... ok...", "come over and talk to me if you ever need me ok?", "*digs a deep hole.*", " ", " ", " "," ", "Hey --- come over here quickly!!!", "*you walk over*", "look at how deep this hole is!", " ", "cool isnt it!!", "i bet you £1 you cant fit in it", "Bet!", "*you lay down perfectly fitting in the hole in the sand*", "Wow this fits per-", "Ow!", "*SAM put a large piece of wood ontop of you leaving you confused for a monent*", "Hey what are you doing?!", "shhhhh just be quiet please!", "HELP!", "*you feel the wood getting heavier as SAM puts more and more sand ontop of the board*", "'Help!' a muffled child's shouts can be heard by sam but he isnt phased in the slightest. he just wanted a friend :)"}
 }
-function KeysFunctions(k,m)
-	if not VREnabled then
-		k = k:lower()
-		if k == "w" then
-			Directions.Forwards = m
-		elseif k == "s" then
-			Directions.Backwards = m
-		elseif k == "d" then
-			Directions.Right = m
-		elseif k == "a" then
-			Directions.Left = m
-		end
-	end
+
+local mouth = Instance.new("ImageLabel", top)
+mouth.Size = UDim2.new(0,100,0,100)
+mouth.Position = UDim2.new(.5,-50,.5,50)
+mouth.BackgroundTransparency = 1
+mouth.Image = "rbxassetid://7232343934"
+
+local eye1 = Instance.new("ImageLabel", top)
+eye1.Size = UDim2.new(0,200,0,200)
+eye1.BackgroundTransparency = 1
+eye1.AnchorPoint = Vector2.new(.5,.5)
+eye1.Position = UDim2.new(.5,150,.25,0)
+eye1.Image = "rbxassetid://6430700049"
+
+local eye2 = Instance.new("ImageLabel", top)
+eye2.Size = UDim2.new(0,200,0,200)
+eye2.BackgroundTransparency = 1
+eye2.AnchorPoint = Vector2.new(.5,.5)
+eye2.Position = UDim2.new(.5,-150,.25,0)
+eye2.Image = "rbxassetid://6430700049"
+
+local tb = Instance.new("TextBox", bottom)
+tb.Size = UDim2.new(.5,0,.5,0)
+tb.TextSize = 50
+tb.TextWrapped = true
+tb.TextColor = BrickColor.new("Really black")
+tb.BackgroundColor = BrickColor.new("Pastel orange")
+tb.BorderSizePixel = 0
+tb.Position = UDim2.new(.25,0,.25,0)
+
+local button = Instance.new("TextButton", tb)
+button.Size = UDim2.new(1,0,1,0)
+button.BackgroundTransparency = 1
+button.Text = " "
+
+local cannext = true
+
+local cur = 0	
+
+sound = Instance.new("Sound", top)
+sound.SoundId = "rbxassetid://5906794267"
+sound.MaxDistance = 100
+sound.Volume = 2
+
+for i,v in pairs(phs1) do
+
+cur = i
+
+local pressed = false
+
+for I = 1,string.len(v) do
+tb.Text = string.sub(v,0,I)
+sound:Play()
+wait(.05)
 end
 
-mouse.KeyDown:Connect(function(k)
-	KeysFunctions(k,.1)
-end)
-mouse.KeyUp:Connect(function(k)
-	KeysFunctions(k,0)
-end)
+button.MouseButton1Click:Connect(function()
 
-game:GetService'RunService'.RenderStepped:Connect(function()
-	if not VREnabled then
-		CurrentCF.Head *= CFrame.new(Directions.Right,0,-Directions.Forwards)
-		CurrentCF.Head *= CFrame.new(-Directions.Left,0,Directions.Backwards)
-		CurrentCF.Head = CFrame.new(CurrentCF.Head.Position) * getRotationCF(Cam.CFrame)
-	end
-	applyCFrames()
+if cannext == true then
+if cur == i then
+pressed = true
+end
+end
+
 end)
 
 
-]],value)
+repeat task.wait() until pressed == true
+
+end
+
+print("phs1 over")
+
+picked = false
+
+tb.Parent = nil
+
+y = Instance.new("TextButton", bottom)
+y.Size = UDim2.new(.25,0,.5,0)
+y.TextSize = 50
+y.TextWrapped = true
+y.TextColor = BrickColor.new("Really black")
+y.Text = "Yes :)"
+y.BackgroundColor = BrickColor.new("Pastel orange")
+y.BorderSizePixel = 0
+y.Position = UDim2.new(.125,0,.25,0)
+n = Instance.new("TextButton", bottom)
+n.Size = UDim2.new(.25,0,.5,0)
+n.TextSize = 50
+n.TextWrapped = true
+n.TextColor = BrickColor.new("Really black")
+n.BackgroundColor = BrickColor.new("Pastel orange")
+n.BorderSizePixel = 0
+n.Position = UDim2.new(.675,0,.25,0)
+n.Text = "No....."
+
+n.MouseButton1Down:Connect(function()
+if picked == false then
+picked = true
+y:Destroy()
+n:Destroy()
+tb.Parent = bottom
+for i,v in pairs(phs2.no) do
+
+cur = i
+
+local pressed = false
+
+for I = 1,string.len(v) do
+tb.Text = string.sub(v,0,I)
+sound:Play()
+wait(.05)
+end
+
+button.MouseButton1Click:Connect(function()
+
+if cannext == true then
+if cur == i then
+pressed = true
+end
+end
+
+end)
+
+
+repeat task.wait() until pressed == true
+
+end
+end
+end)
+
+y.MouseButton1Down:Connect(function()
+if picked == false then
+picked = true
+y:Destroy()
+n:Destroy()
+tb.Parent = bottom
+for i,v in pairs(phs2.yes) do
+
+cur = i
+
+local pressed = false
+
+for I = 1,string.len(v) do
+tb.Text = string.sub(v,0,I)
+sound:Play()
+wait(.05)
+end
+
+button.MouseButton1Click:Connect(function()
+
+if cannext == true then
+if cur == i then
+pressed = true
+end
+end
+
+end)
+
+
+repeat task.wait() until pressed == true
+
+end
+end
+end)
+
+
+warn("phs2 start")
