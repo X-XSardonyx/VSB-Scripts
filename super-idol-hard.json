@@ -30,7 +30,7 @@ sound:Play()
 for i = 1,20 do
 local frame = Instance.new("Frame", bottom)
 frame.Position = UDim2.new(.5,-math.sin(i)*300,.5,math.cos(i)*300)
-frame.Rotation = 360/i
+frame.Rotation = i*(360/20)
 frame.Size = UDim2.new(0,50,0,100)
 coroutine.wrap(function()
 while wait() do
