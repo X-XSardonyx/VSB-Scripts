@@ -1,7 +1,7 @@
 function joke()
 jokee = game:service("HttpService"):JSONDecode(game:service("HttpService"):GetAsync("https://v2.jokeapi.dev/joke/Any?safe-mode"))
 
-if jokee.error then
+if joke.error then
 return joke()
 end
 
