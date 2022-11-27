@@ -38,6 +38,18 @@ eye2.AnchorPoint = Vector2.new(.5,.5)
 eye2.Position = UDim2.new(.5,-150,.25,0)
 eye2.Image = "rbxassetid://6430700049"
 
+coroutine.wrap(function()
+while wait() do
+if math.sin(tick())>.99 then
+eye1.Image = "rbxassetid://7042433858"
+eye2.Image = "rbxassetid://7042433858"
+else
+eye1.Image = "rbxassetid://6430700049"
+eye2.Image = "rbxassetid://6430700049"
+end
+end
+end)()
+
 local tb = Instance.new("TextBox", bottom)
 tb.Size = UDim2.new(.5,0,.5,0)
 tb.TextSize = 50
