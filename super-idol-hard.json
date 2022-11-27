@@ -15,7 +15,7 @@ return joke()
 end
 end
 
-return jokee
+return jokee.joke
 
 end
 
@@ -68,11 +68,13 @@ sound.Volume = 2
 
 
 while wait(5) do
+
 Pun = joke()
-Pun = Pun.joke
+
 for i=1,string.len(Pun) do
 tb.Text = string.sub(Pun,0,i)
 sound:Play()
 wait(.1)
 end
+
 end	
