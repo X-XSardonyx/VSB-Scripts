@@ -1,16 +1,16 @@
 function joke()
 jokee = game:service("HttpService"):JSONDecode(game:service("HttpService"):GetAsync("https://v2.jokeapi.dev/joke/Any?safe-mode"))
 
-if joke.error then
+if jokee.error then
 return joke()
 end
 
---[[if joke.type then
-if joke.type ~= "twopart" then
+if jokee.type then
+if jokee.type ~= "twopart" then
 return joke()
 end
 end
-]]
+
 
 end
 
