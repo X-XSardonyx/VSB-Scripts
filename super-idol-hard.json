@@ -57,7 +57,6 @@ tb.TextScaled = true
 tb.TextColor = BrickColor.new("Really black")
 tb.BackgroundColor = BrickColor.new("Pastel orange")
 tb.BorderSizePixel = 0
-tb.TextXAlignment = "Left"
 
 sound = Instance.new("Sound", bottom)
 sound.SoundId = "rbxassetid://5906794267"
