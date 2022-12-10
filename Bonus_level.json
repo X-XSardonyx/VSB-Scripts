@@ -1,4 +1,4 @@
-local CF = CFrame.new(0,0,2500)
+local CF = CFrame.new(0,300,0)
 local load = false
 
 local rooms = {}
